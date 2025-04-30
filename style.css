@@ -25,15 +25,7 @@ body {
     padding: 0.5rem 1rem;
     cursor: pointer;
     font-weight: bold;
-  }
-  
-  section.content {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 4px;
   }
   
   h2 {
@@ -52,41 +44,12 @@ body {
     color: #777;
   }
   
-  /* Dark Mode */
-  body.dark {
-    background-color: #1e1e1e;
-    color: #f0f0f0;
-  }
-  
-  body.dark section.content {
-    background-color: #2a2a2a;
-  }
-  
-  body.dark header {
-    background-color: #1a3a4f;
-  }
-  
-  body.dark header button {
-    background: #f0f0f0;
-    color: #1e1e1e;
-  }
-  
-  /* Animation */
-  .hidden {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  }
-  
-  .show {
-    opacity: 1;
-    transform: translateY(0);
-  }
   /* Tab navigation */
-.tab-nav {
+  .tab-nav {
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
   }
+  
   .tab-btn {
     padding: 0.6rem 1.2rem;
     margin: 0 0.5rem;
@@ -96,7 +59,9 @@ body {
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
+    transition: background 0.3s ease;
   }
+  
   .tab-btn.active {
     background: #24576e;
   }
@@ -111,10 +76,38 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
   }
+  
   .tab-content.active {
     display: block;
   }
+  
+  /* Hidden elements (for animation or conditional display) */
   .hidden {
     display: none;
+  }
+  
+  /* Dark Mode Styles */
+  body.dark {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+  }
+  
+  body.dark section,
+  body.dark .tab-content {
+    background-color: #2a2a2a;
+  }
+  
+  body.dark header {
+    background-color: #1a3a4f;
+  }
+  
+  body.dark header button,
+  body.dark .tab-btn {
+    background: #eee;
+    color: #1e1e1e;
+  }
+  
+  body.dark .tab-btn.active {
+    background: #bbb;
   }
   

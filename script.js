@@ -4,21 +4,6 @@ toggleButton.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 });
 
-// Scroll animation for sections
-const hiddenSections = document.querySelectorAll(".hidden");
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-      observer.unobserve(entry.target); // Animate only once
-    }
-  });
-}, {
-  threshold: 0.2
-});
-
-hiddenSections.forEach(section => observer.observe(section));
 // Tab switching
 const tabButtons = document.querySelectorAll('.tab-btn');
 const tabContents = document.querySelectorAll('.tab-content');
@@ -27,28 +12,39 @@ tabButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const tab = btn.getAttribute('data-tab');
 
+    // Deactivate all buttons and content
     tabButtons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+    tabContents.forEach(section => section.classList.remove('active'));
 
-    tabContents.forEach(section => {
-      section.classList.remove('active');
-    });
+    // Activate current tab
+    btn.classList.add('active');
     document.getElementById(`tab-${tab}`).classList.add('active');
   });
 });
 
+// Opt-out form behavior
 const optOutForm = document.getElementById('optOutForm');
 const confirmation = document.getElementById('optout-confirmation');
 
 optOutForm.addEventListener('submit', function (e) {
   e.preventDefault();
-
-  // Show confirmation
   confirmation.classList.remove('hidden');
-
-  // Optionally, disable the form to prevent resubmission
-  // optOutForm.querySelector('button').disabled = true;
-
-  // Clear textarea input
-  optOutForm.querySelector('textarea').value = '';
+  optOutForm.reset();
 });
+
+// Optional: Animate info sections as they scroll into view
+const animatedSections = document.querySelectorAll('.section.hidden');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.remove('hidden');
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+animatedSections.forEach(section => observer.observe(section));
