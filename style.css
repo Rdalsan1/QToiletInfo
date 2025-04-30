@@ -114,4 +114,7 @@ body {
   .tab-content.active {
     display: block;
   }
+  .hidden {
+    display: none;
+  }
   

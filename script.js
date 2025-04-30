@@ -41,7 +41,7 @@ tabButtons.forEach(btn => {
 const optOutForm = document.getElementById('optOutForm');
 const confirmation = document.getElementById('optout-confirmation');
 
-optOutForm.addEventListener('submit', function(e) {
+optOutForm.addEventListener('submit', function (e) {
   e.preventDefault();
   confirmation.classList.remove('hidden');
   optOutForm.reset();
