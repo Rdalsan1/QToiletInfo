@@ -82,4 +82,36 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+  /* Tab navigation */
+.tab-nav {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .tab-btn {
+    padding: 0.6rem 1.2rem;
+    margin: 0 0.5rem;
+    border: none;
+    background: #31708e;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .tab-btn.active {
+    background: #24576e;
+  }
+  
+  /* Tab content */
+  .tab-content {
+    display: none;
+    max-width: 800px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  .tab-content.active {
+    display: block;
+  }
   
