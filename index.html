@@ -29,7 +29,7 @@
       </p>
     </div>
 
-    <div class="section">
+    <div class="section" id="intro">
       <h2>What Information is Collected?</h2>
       <ul>
         <li>Biomarkers for drug use, pregnancy, or disease</li>
@@ -39,7 +39,7 @@
       </ul>
     </div>
 
-    <div class="section">
+    <div class="section" id="intro">
       <h2>How is the Data Used?</h2>
       <p>
         All data is anonymized and used to:
@@ -51,7 +51,7 @@
       </ul>
     </div>
 
-    <div class="section">
+    <div class="section" id="intro">
       <h2>Privacy and Access</h2>
       <ul>
         <li>No personal or visual identification is collected</li>
@@ -64,19 +64,35 @@
   <!-- Opt-Out Section -->
   <section id="tab-optout" class="tab-content hidden">
     <h2>Opt Out of Data Collection</h2>
-    <p>If you do not wish to have your data included, you can opt out below. This system respects your preference.</p>
-
+    <p>
+      If you do not wish to have your data included, you can opt out below. This system respects your preference and allows you to control participation both digitally and physically.
+    </p>
+  
+    <h3>Opt-Out in the Restroom</h3>
+    <p>
+      Inside each stall, you'll find a <strongfoot-level lever</strong> that controls your privacy settings. By default, the system is set to <strong>opt-in</strong> (green light). You can change your preference using this simple method:
+    </p>
+    <ul>
+      <li><strong>Flip the lever UP</strong> to opt in to anonymous health data collection. (Light turns <span style="color: green;">green</span>)</li>
+      <li><strong>Flip the lever DOWN</strong> to opt out. No data will be recorded. (Light turns <span style="color: red;">red</span>)</li>
+    </ul>
+    <p>
+      The lever is located near the base of the stall wall and can be easily adjusted with your foot. The light indicator is mounted at eye level to confirm your selection before use.
+    </p>
+  
+    <h3>Opt-Out Online</h3>
     <form id="optOutForm">
       <label for="reason">Reason for opting out (optional):</label><br/>
       <textarea id="reason" name="reason" rows="4" cols="50" placeholder="Your feedback helps us improve..."></textarea><br/><br/>
-
+  
       <button type="submit">Submit Opt-Out Request</button>
-
+  
       <p id="optout-confirmation" class="hidden" style="color: green; font-weight: bold; margin-top: 1rem;">
         ✅ Your request has been recorded. Thank you!
       </p>
     </form>
   </section>
+  
 
   <footer>
     &copy; 2025 Quantified Toilet | For demonstration purposes only.
