@@ -37,12 +37,18 @@ tabButtons.forEach(btn => {
   });
 });
 
-// Opt-out form submission simulation
 const optOutForm = document.getElementById('optOutForm');
 const confirmation = document.getElementById('optout-confirmation');
 
 optOutForm.addEventListener('submit', function (e) {
   e.preventDefault();
+
+  // Show confirmation
   confirmation.classList.remove('hidden');
-  optOutForm.reset();
+
+  // Optionally, disable the form to prevent resubmission
+  // optOutForm.querySelector('button').disabled = true;
+
+  // Clear textarea input
+  optOutForm.querySelector('textarea').value = '';
 });
